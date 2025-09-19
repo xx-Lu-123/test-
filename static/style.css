@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+}
+
+.form-box {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 14px 0;
+  transition: box-shadow 0.2s ease;
+}
+
+.input-group:hover {
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+.input-group i.fa {
+  margin-right: 10px;
+  color: #999;
+  font-size: 16px;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  width: 100%;
+  background: transparent;
+  font-size: 16px;
+  padding-right: 28px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color: #999;
+  font-size: 16px;
+}
+
+button {
+  background-color: #4a90e2;
+  color: white;
+  padding: 14px;
+  font-size: 16px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #357ABD;
+}
+
+p {
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+a {
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 訊息提示 */
+.flash {
+  margin-bottom: 10px;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.flash.success {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.flash.danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+/* 淡入動畫 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 響應式 */
+@media screen and (max-width: 480px) {
+  .form-box {
+    padding: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .input-group {
+    padding: 8px;
+  }
+
+  button {
+    padding: 12px;
+  }
+}
+
+.social-login {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-btn {
+  display: inline-block;
+  margin: 6px;
+  padding: 10px 18px;
+  font-size: 14px;
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.social-btn.google {
+  background-color: #db4437;
+}
+
+.social-btn.google:hover {
+  background-color: #c1351d;
+}
+
+.social-btn.facebook {
+  background-color: #3b5998;
+}
+
+.social-btn.facebook:hover {
+  background-color: #2d4373;
+}
+
+.social-btn i {
+  margin-right: 8px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: left;
+}
+.card h3 {
+  margin-top: 0;
+  color: #333;
+}
+.logout-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 25px;
+  background-color: #dc3545;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+}
+.logout-btn:hover {
+  background-color: #c82333;
+}
