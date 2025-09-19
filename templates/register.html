@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>註冊新帳號</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <form class="form-box" method="POST" onsubmit="return validatePasswords();">
+      <h2>📝 註冊帳號</h2>
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, message in messages %}
+          <div class="flash {{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endwith %}
+
+      <div class="input-group">
+        <i class="fa fa-user-plus"></i>
+        <input type="text" name="username" placeholder="帳號名稱" required>
+      </div>
+
+      <div class="input-group">
+        <i class="fa fa-lock"></i>
+        <input type="password" name="password" id="password" placeholder="密碼" required>
+        <i class="fa fa-eye toggle-password" onclick="togglePassword('password', this)"></i>
+      </div>
+
+      <div class="input-group">
+        <i class="fa fa-lock"></i>
+        <input type="password" name="confirm_password" id="confirm_password" placeholder="確認密碼" required>
+        <i class="fa fa-eye toggle-password" onclick="togglePassword('confirm_password', this)"></i>
+      </div>
+
+      <div id="password-error" class="flash danger" style="display: none;">
+        兩次密碼輸入不一致，請再確認 ❗
+      </div>
+
+      <button type="submit">註冊</button>
+      <p>已有帳號？<a href="{{ url_for('login') }}">立即登入</a></p>
+    </form>
+  </div>
+
+  <script>
+    function togglePassword(fieldId, icon) {
+      const input = document.getElementById(fieldId);
+      const isPassword = input.type === 'password';
+      input.type = isPassword ? 'text' : 'password';
+      icon.classList.toggle('fa-eye');
+      icon.classList.toggle('fa-eye-slash');
+    }
+
+    function validatePasswords() {
+      const password = document.getElementById('password').value;
+      const confirm = document.getElementById('confirm_password').value;
+      const errorMsg = document.getElementById('password-error');
+
+      if (password !== confirm) {
+        errorMsg.style.display = 'block';
+        return false;
+      }
+      errorMsg.style.display = 'none';
+      return true;
+    }
+  </script>
+</body>
+</html>

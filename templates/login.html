@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>登入系統</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <form class="form-box" method="POST">
+      <h2>🔐 用戶登入</h2>
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, message in messages %}
+          <div class="flash {{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endwith %}
+
+      <div class="input-group">
+        <i class="fa fa-user"></i>
+        <input type="text" name="username" placeholder="帳號名稱" required>
+      </div>
+
+      <div class="input-group">
+        <i class="fa fa-lock"></i>
+        <input type="password" name="password" id="login_password" placeholder="密碼" required>
+        <i class="fa fa-eye toggle-password" onclick="togglePassword('login_password', this)"></i>
+      </div>
+
+      <div style="text-align: right; margin-top: -8px; font-size: 13px;">
+        <a href="#" style="color: #007BFF;">忘記密碼？</a>
+      </div>
+
+      <button type="submit">登入</button>
+
+      <div class="social-login">
+        <p style="margin: 20px 0 10px;">或使用以下方式登入</p>
+        <a href="{{ url_for('login_google') }}" class="social-btn google">
+          <i class="fab fa-google"></i> Google
+        </a>
+      </div>
+
+      <p>還沒有帳號？<a href="{{ url_for('register') }}">立即註冊</a></p>
+    </form>
+  </div>
+
+  <script>
+    function togglePassword(fieldId, icon) {
+      const input = document.getElementById(fieldId);
+      const isPassword = input.type === 'password';
+      input.type = isPassword ? 'text' : 'password';
+      icon.classList.toggle('fa-eye');
+      icon.classList.toggle('fa-eye-slash');
+    }
+  </script>
+</body>
+</html>

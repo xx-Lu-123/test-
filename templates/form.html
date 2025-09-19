@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>申請 / 投訴表單</title>
+</head>
+<body style="background:#0f2027;color:#e0f7fa;font-family:'Segoe UI',sans-serif;padding:40px;text-align:center;">
+  <h1>📄 填寫表單</h1>
+  <form action="{{ url_for('submit_form') }}" method="POST" style="max-width:500px;margin:auto;text-align:left;">
+    <label for="name">名稱：</label><br>
+    <input type="text" id="name" name="name" required style="width:100%;padding:8px;"><br><br>
+
+    <label for="type">類型：</label><br>
+    <select id="type" name="type" style="width:100%;padding:8px;">
+      <option value="申請">申請</option>
+      <option value="投訴">投訴</option>
+    </select><br><br>
+
+    <label for="message">內容：</label><br>
+    <textarea id="message" name="message" rows="5" required style="width:100%;padding:8px;"></textarea><br><br>
+
+    <button type="submit" style="padding:10px 20px;background:#00ffe7;color:#001f1f;border:none;border-radius:6px;">提交</button>
+  </form>
+
+  <p style="margin-top:30px;">
+    <a href="{{ url_for('home') }}" style="color:#9fe8dd;">⬅️ 返回首頁</a>
+  </p>
+</body>
+</html>

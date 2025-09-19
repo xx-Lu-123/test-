@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>劫魂工作室</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --bg: #0f2027;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --neon: #00ffe7;
+      --danger: #ff6666;
+      --text: #e0f7fa;
+      --muted: #cfeff0;
+      --shadow: 0 0 12px rgba(0, 255, 231, 0.2);
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      font-family: 'Segoe UI', sans-serif;
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+    }
+
+    section {
+      max-width: 960px;
+      width: 100%;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 24px;
+      text-shadow: 0 0 12px var(--neon), 0 0 24px var(--neon);
+    }
+
+    .intro-text {
+      font-size: 20px;
+      color: var(--muted);
+      line-height: 1.6;
+      background: var(--card-bg);
+      padding: 24px;
+      border-radius: var(--radius);
+      backdrop-filter: blur(6px);
+      box-shadow: var(--shadow);
+      margin-bottom: 40px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    .nav-links a {
+      display: block;
+      background: var(--neon);
+      color: #001f1f;
+      padding: 14px 20px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 8px var(--neon);
+      transition: all 0.2s ease-in-out;
+    }
+
+    .nav-links a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 16px var(--neon);
+    }
+
+    .footer-buttons {
+      margin-top: 48px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-buttons a {
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 8px;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .footer-buttons a:hover {
+      transform: translateY(-3px);
+    }
+
+    .home-btn {
+      background: var(--neon);
+      color: #001f1f;
+      box-shadow: 0 0 8px var(--neon);
+    }
+
+    .logout-btn {
+      background: var(--danger);
+      color: white;
+      box-shadow: 0 0 8px var(--danger);
+    }
+  </style>
+</head>
+<body>
+
+  <section>
+    <h1>💼 工作室介紹</h1>
+
+    <p class="intro-text">
+      我們是 <strong>劫魂工作室</strong>，致力於提供優質 <strong>各種網站、DC機器人服務</strong>，<br>
+      從架設、管理到社群營運，提供一條龍專業服務，協助你實現遊戲創意。
+    </p>
+
+    <div class="nav-links">
+      <a href="{{ url_for('so') }}">🏢 工作室介紹</a>
+      <a href="{{ url_for('service') }}">🛠️ 工作室服務</a>
+      <a href="{{ url_for('form') }}">📝 申請 / 投訴表單</a>
+      <a href="{{ url_for('account') }}">👤 帳戶資訊</a>
+    </div>
+
+    <div class="footer-buttons">
+      <a class="home-btn" href="{{ url_for('home') }}">返回首頁</a>
+      <a class="logout-btn" href="{{ url_for('logout') }}">🔓 登出</a>
+    </div>
+  </section>
+
+</body>
+</html>

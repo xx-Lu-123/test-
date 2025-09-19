@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>首頁 - 劫魂工作室</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin:0;padding:0;background:#0f2027;font-family:'Segoe UI',sans-serif;color:#e0f7fa;">
+
+  <section style="text-align:center;padding:60px 20px;">
+    <h1 style="font-size:48px;margin-bottom:16px;text-shadow:0 0 12px #00ffe7, 0 0 24px #00ffe7;">
+      歡迎來到 劫魂工作室 網站頁面
+    </h1>
+
+    <p style="font-size:20px;max-width:800px;margin:0 auto 32px;color:#cfeff0;line-height:1.6;
+              background:rgba(255,255,255,0.05);padding:20px;border-radius:12px;backdrop-filter:blur(6px);
+              box-shadow:0 0 12px rgba(0,255,231,0.2);">
+      在此您可以查看劫魂工作室資訊與服務。
+    </p>
+
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;">
+      <a href="{{ url_for('about') }}" style="padding:12px 24px;background:#00ffe7;color:#001f1f;
+         border-radius:8px;text-decoration:none;font-weight:bold;box-shadow:0 0 8px #00ffe7;
+         transition:transform 0.2s ease, box-shadow 0.2s ease;"
+         onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 0 16px #00ffe7';"
+         onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 0 8px #00ffe7';">
+        前往工作室
+      </a>
+    </div>
+
+    <div style="color:#9fe8dd;font-size:14px;">
+      最後更新：{{ now if now is defined else "尚未提供" }}
+    </div>
+  </section>
+
+</body>
+</html>

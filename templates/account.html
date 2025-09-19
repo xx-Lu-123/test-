@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>帳戶資訊</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin:0;padding:0;background:#0f2027;font-family:'Segoe UI',sans-serif;color:#e0f7fa;">
+
+  <section style="text-align:center;padding:60px 20px; max-width:600px; margin:0 auto;">
+    <h1 style="font-size:42px;margin-bottom:24px;text-shadow:0 0 12px #00ffe7;">
+      👤 帳戶資訊
+    </h1>
+
+    <div style="background:rgba(255,255,255,0.05); padding:20px; border-radius:12px;
+                box-shadow:0 0 12px rgba(0,255,231,0.2); margin-bottom:32px; max-width:100%;">
+      <p style="font-size:18px; margin: 8px 0;">
+        <strong>用戶名： </strong>{{ username }}
+      </p>
+      <p style="font-size:18px; margin: 8px 0;">
+        <strong>Email： </strong>{{ email }}
+      </p>
+      <!-- 如果之後有其他帳戶資料，也可以再加這裡 -->
+    </div>
+
+    <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+      <a href="{{ url_for('home') }}" style="padding:12px 24px;background:#00ffe7;color:#001f1f;
+         border-radius:8px;text-decoration:none;font-weight:bold;box-shadow:0 0 8px #00ffe7;">
+        返回首頁
+      </a>
+      <a href="{{ url_for('logout') }}" style="padding:12px 24px;background:#ff6666;color:#fff;
+         border-radius:8px;text-decoration:none;font-weight:bold;box-shadow:0 0 8px #ff6666;">
+        🔓 登出
+      </a>
+    </div>
+  </section>
+
+</body>
+</html>

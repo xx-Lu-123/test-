@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>工作室介紹 - 劫魂工作室</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin:0;padding:0;background:#0f2027;font-family:'Segoe UI',sans-serif;color:#e0f7fa;">
+
+  <section style="text-align:center;padding:60px 20px;">
+    <h1 style="font-size:48px;margin-bottom:16px;text-shadow:0 0 12px #00ffe7, 0 0 24px #00ffe7;">
+      💼 關於劫魂工作室
+    </h1>
+
+    <p style="font-size:20px;max-width:800px;margin:0 auto 32px;color:#cfeff0;line-height:1.6;
+              background:rgba(255,255,255,0.05);padding:20px;border-radius:12px;backdrop-filter:blur(6px);
+              box-shadow:0 0 12px rgba(0,255,231,0.2);">
+      我們是 <strong>劫魂工作室</strong>，專注於提供客戶更好的服務。
+    </p>
+
+    <div style="text-align:left;max-width:800px;margin:0 auto;color:#cfeff0;line-height:1.8;">
+      <hr style="border-color:#00ffe7;">
+      <h2>🌟 專業服務項目</h2>
+      <p>🎮 Minecraft | TRPG | 遊戲 & 創作全方位支援</p>
+      <p>想讓你的作品更專業、更完整？我能為你提供從遊戲建構、內容創作，到影片呈現的全方位協助！</p>
+
+      <h3>🧱 Minecraft 服務</h3>
+      <ul>
+        <li>✨ 專屬建築設計</li>
+        <li>🔧 模組安裝/配置</li>
+        <li>🎥 Replay Mod 剪輯</li>
+      </ul>
+
+      <h3>🎲 TRPG 服務</h3>
+      <ul>
+        <li>🌍 世界觀架構</li>
+        <li>🩹 規則與劇情漏洞修補</li>
+        <li>📑 管理支援</li>
+        <li>⚡ 快速教學</li>
+      </ul>
+
+      <h3>💻 其他創作服務</h3>
+      <ul>
+        <li>🎬 視頻剪輯</li>
+        <li>🌐 網站製作 (HTML 前後端)</li>
+        <li>🎮 遊戲製作支援</li>
+      </ul>
+
+      <p style="margin-top:24px;"><strong>💡 不論是 Minecraft、TRPG，還是遊戲與網站創作，我都能成為你的最佳幫手！</strong></p>
+      <p>📩 歡迎聯繫合作，一起實現你的創意 🎉</p>
+
+      <hr style="border-color:#00ffe7;">
+      <h3>🔗 工作室連結</h3>
+      <p>
+        <a href="https://discord.gg/8A5JrCdtgy" target="_blank" style="color:#00ffe7;text-decoration:underline;">
+          👉 點我加入 Discord 伺服器
+        </a>
+      </p>
+      <p>目前可下載、追蹤服主製作的遊戲製作進度</p>
+    </div>
+
+    <div style="margin-top:40px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+      <a href="{{ url_for('about') }}" style="padding:12px 24px;background:#00ffe7;color:#001f1f;
+         border-radius:8px;text-decoration:none;font-weight:bold;box-shadow:0 0 8px #00ffe7;">
+        🔙 返回選單
+      </a>
+      <a href="{{ url_for('logout') }}" style="padding:12px 24px;background:#ff6666;color:#fff;
+         border-radius:8px;text-decoration:none;font-weight:bold;box-shadow:0 0 8px #ff6666;">
+        🔓 登出
+      </a>
+    </div>
+  </section>
+
+</body>
+</html>

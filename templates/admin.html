@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>管理者檢視</title>
+</head>
+<body style="background:#0f2027;color:#e0f7fa;font-family:'Segoe UI',sans-serif;padding:40px;">
+  <h1>🛠 表單提交內容</h1>
+  {% if forms %}
+    <ul>
+      {% for item in forms %}
+        <li style="margin-bottom:20px;">
+          <strong>👤 名稱:</strong> {{ item.name }}<br>
+          <strong>📄 類型:</strong> {{ item.type }}<br>
+          <strong>📝 內容:</strong> {{ item.message }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>尚無任何提交。</p>
+  {% endif %}
+
+  <a href="{{ url_for('home') }}" style="color:#9fe8dd;">⬅️ 返回首頁</a>
+</body>
+</html>
